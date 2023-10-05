@@ -1,0 +1,1 @@
+- User defined function names should be different from imported names.

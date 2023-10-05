@@ -1,0 +1,13 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "rest-client.environmentVariables": {
+    "local": {
+      "baseUrl": "http://localhost:5000"
+    },
+    "localProd": {
+      "baseUrl": "http://localhost:8000"
+    }
+  }
+}

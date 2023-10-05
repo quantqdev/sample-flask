@@ -1,0 +1,108 @@
+GET {{baseUrl}}/
+
+###
+
+GET {{baseUrl}}/login
+
+###
+
+POST {{baseUrl}}/login
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+### get login form
+
+GET {{baseUrl}}/login-form
+
+### failure login
+
+POST {{baseUrl}}/login-form
+Content-Type: application/x-www-form-urlencoded
+
+username=foo
+&password=bar
+
+### success login
+
+POST {{baseUrl}}/login-form
+Content-Type: application/x-www-form-urlencoded
+
+username=admin
+&password=pass
+
+###
+
+GET {{baseUrl}}/hello
+
+###
+
+GET {{baseUrl}}/hello/myuser
+
+### upload file
+
+POST {{baseUrl}}/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="the_file"; filename="requirements.txt"
+Content-Type: text/plain
+
+< ./requirements.txt
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="the_file2"; filename=".gitignore"
+Content-Type: text/plain
+
+< ./.gitignore
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### cookie
+
+GET {{baseUrl}}/cookie
+Cookie: username=agooduser
+
+### redirect
+
+GET {{baseUrl}}/redirect-hello
+
+### abort
+
+GET {{baseUrl}}/abort
+
+### abort
+
+GET {{baseUrl}}/not-found/me
+
+### json me
+
+GET {{baseUrl}}/me
+
+### json users
+
+GET {{baseUrl}}/users
+
+### session update
+
+POST {{baseUrl}}/session-update
+Content-Type: application/x-www-form-urlencoded
+
+username=superuser
+
+### session check
+
+GET {{baseUrl}}/session-check
+
+### session-destroy
+
+GET {{baseUrl}}/session-destroy
+
+### flash for event counter
+
+GET {{baseUrl}}/flash
